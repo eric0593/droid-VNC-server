@@ -78,7 +78,7 @@ screenFormat screenformat;
 
 #ifdef NOAPP
 #define DVNC_FILES_PATH "/data/local/tmp"
-#define DVNC_LIB_PATH "/data/local/tmp"
+#define DVNC_LIB_PATH "/system/lib"
 #else
 #define DVNC_FILES_PATH "/data/data/org.onaips.vnc/files/"
 #define DVNC_LIB_PATH "/data/data/org.onaips.vnc/lib/"
