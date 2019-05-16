@@ -1,6 +1,5 @@
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
-
 LIBVNCSERVER_ROOT:=./LibVNCServer-0.9.9
 
 LIBVNCSERVER_SRC_FILES:= \
@@ -43,7 +42,8 @@ LOCAL_CFLAGS  +=  -Wall -Wno-unused-variable -Wno-maybe-uninitialized -Wno-unuse
 									-DLIBVNCSERVER_HAVE_LIBPNG \
 									-DLIBVNCSERVER_HAVE_ZLIB \
 									-DLIBVNCSERVER_HAVE_LIBJPEG \
-									-DNOAPP
+									-DNOAPP \
+									-DAPI_LEVEL=$(API_LEVEL)
 
 LOCAL_LDLIBS +=  -llog -lz -ldl
 

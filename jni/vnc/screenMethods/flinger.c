@@ -28,13 +28,12 @@ close_fn_type close_flinger = NULL;
 readfb_fn_type readfb_flinger = NULL;
 checkfb_fn_type checkfb_flinger = NULL;
 getscreenformat_fn_type getscreenformat_flinger = NULL;
-
 int initFlinger(void)
 {
     L("--Loading flinger native lib--\n");
     int i,len;
     char lib_name[64];
-    sprintf(lib_name, DVNC_LIB_PATH "/libdvnc_flinger_sdk.so");
+    sprintf(lib_name, DVNC_LIB_PATH "/libdvnc_flinger_sdk%d.so",API_LEVEL);
 
     // 1. Open lib
     flinger_lib = dlopen(lib_name, RTLD_NOW);

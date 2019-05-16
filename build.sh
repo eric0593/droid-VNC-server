@@ -43,7 +43,7 @@ if [ -z "$API_LEVEL" ]; then
     usage
     exit 1
 fi
-
+export API_LEVEL
 clean
 ndk-build
 
