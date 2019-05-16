@@ -215,7 +215,11 @@ extern "C" int init_flinger()
 
     screenshotClient = new ScreenshotClient();
     L("ScreenFormat: %d\n", screenshotClient->getFormat());
+#if (PLATFORM_SDK_VERSION<=19)
+    errcode = screenshotClient->update(display);
+#else
     errcode = screenshotClient->update(display, Rect(), false);
+#endif
     L("Screenshot client updated its display on init.\n");
     if (display != NULL && errcode == NO_ERROR)
         return 0;
@@ -225,14 +229,22 @@ extern "C" int init_flinger()
 
 extern "C" unsigned int *checkfb_flinger()
 {
+#if (PLATFORM_SDK_VERSION<=19)
+    screenshotClient->update(display);
+#else
     screenshotClient->update(display, Rect(), false);
+#endif
     void const* base = screenshotClient->getPixels();
     return (unsigned int*)base;
 }
 
 extern "C" unsigned int *readfb_flinger()
 {
+#if (PLATFORM_SDK_VERSION<=19)
+    screenshotClient->update(display);
+#else
     screenshotClient->update(display, Rect(), false);
+#endif
     void const* base = 0;
     uint32_t w, h, s;
 
