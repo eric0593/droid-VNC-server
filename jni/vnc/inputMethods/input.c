@@ -138,13 +138,13 @@ int keysym2scancode(rfbBool down, rfbKeySym c, rfbClientPtr cl, int *sh, int *al
 		case 0xffff: 
 			return 158;// del -> back
 		case 0xff55: 
-			return 229;// PgUp -> menu
+			return 139;// PgUp -> menu
 		case 0xffcf: 
 			return 127;// F2 -> search
 		case 0xffe3: 
 			return 127;// left ctrl -> search
 		case 0xff56: 
-			return 61;// PgUp -> call
+			return 231;// PgUp -> call
 		case 0xff57: 
 			return 107;// End -> endcall
 		case 0xffc2: 
