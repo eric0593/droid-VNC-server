@@ -151,7 +151,7 @@ int keysym2scancode(rfbBool down, rfbKeySym c, rfbClientPtr cl, int *sh, int *al
 			//return 211;// F5 -> focus
 			return 12;//5 -> KEYCODE_MINUS
 		case 0xffc3: 
-			return 212;// F6 -> camera
+			return 116;// F6 -> camera POWER
 		case 0xffc4: 
 			return 150;// F7 -> explorer
 		case 0xffc5: 
